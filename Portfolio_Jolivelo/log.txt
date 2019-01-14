@@ -1,0 +1,16 @@
+-- 09/06/18
+
+*Début reprise
+**Brainstorming rapide
+**Création pages index, portfolio et photographie
+**Récupération structure html et organisation de base
+
+-- 10/06/18
+
+*tests css et révision des bases
+
+-- 16/07/2018
+
+*Enlever page photographie
+*Pages Home/Projets/A Propos
+*Lien vers page Flickr pour photographie
