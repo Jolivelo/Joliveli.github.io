@@ -1,0 +1,60 @@
+html, body {
+    height:100%;margin:0;
+}
+
+
+
+
+
+
+#siteWrapper header {
+    height:80px;
+    top:-80px;
+    background:#000;
+}
+
+#siteWrapper header.fixed {
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+}
+
+#siteWrapper ul {
+    padding: 25px 0;
+    margin:0;
+    text-align: center;
+}
+
+#siteWrapper header li {
+    display: inline;
+    margin: 1rem;
+    color: white;
+}
+
+@media only screen and (min-width: 768px) {
+  #siteWrapper header li {
+    margin:3rem; 
+  }
+}
+
+#siteWrapper header a {
+    color: inherit;
+}
+
+
+#content {
+    padding:60px 0;
+    background:white;
+}
+
+#siteWrapper header.fixed+#content {
+    margin-top:80px;
+}
+
+#content div {
+    width:80%;
+    height:1000px;
+    margin:auto;
+    border:solid;
+}
