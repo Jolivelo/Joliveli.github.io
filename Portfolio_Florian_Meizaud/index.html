@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" content="width=device-width, initial-scale=1.0">
     <title>Florian Meizaud</title>
-    <link href="https://fonts.googleapis.com/css?family=Parisienne|Prata" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Parisienne|Prata|Roboto|Great+Vibes" rel="stylesheet"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/introStyle.css">
@@ -17,30 +17,94 @@
 		<h1 data-content="Florian Meizaud"><span>Florian Meizaud</span></h1>
 		<div class="action-wrapper">
 			<p>
-                <a href="#siteWrapper" class="cd-btn main-action js-scrollTo">Happiness communication manager</a>
+                <a href="#introText" class="cd-btn main-action js-scrollTo">Happiness communication manager</a>
 			</p>
 		</div>
 	</div>
-</section>
+    </section>
+    
     <div id="siteWrapper">
         <header>
             <nav>
                <ul>
                     <li>
-                        <a href="portfolio.html">Portfolio</a>
+                        <span>#</span><a href="#comInterne" class="js-scrollTo">ComInterne</a>
                     </li>
                     <li>
-                        <a href="video.html">Vidéos</a>
-                    </li>
+                        <span>#</span><a href="#digital" class="js-scrollTo">Digital</a>
+                    </li> 
                     <li>
-                        <a href="contact.html">Contact</a>
+                        <span>#</span><a href="#evenementiel" class="js-scrollTo">Événementiel</a>    
+                    </li>
+                   <li>
+                        <span>#</span><a href="#mecenat" class="js-scrollTo">Mécénat</a>    
+                    </li>
+                   <li>
+                        <span>#</span><a href="#photo" class="js-scrollTo">Photo</a>    
+                    </li>  
+                    <!-- 
+                    <li>
+                        <span>#</span><a href="#video" class="js-scrollTo">Vidéo</a>    
+                    </li>
+                    -->
+                   <li>
+                        <span>#</span><a href="#presse" class="js-scrollTo">Presse</a>    
                     </li>
                 </ul>
             </nav>
         </header>
 
         <section id="content">
-            <div></div>
+            <div id="introText" class="content-box"> 
+                <h5>Si les lettres sont des notes, je suis alors un musicien qui joue avec les mots</h5>
+                
+                <h6>Florian Meizaud</h6>
+                <span>Janvier 2019</span>
+            </div>
+            <div id="comInterne" class="content-box">
+                
+                <h5>Parce que l'être humain a besoin de reconnaissance, la communication interne est essentielle pour fédérer et fidéliser.</h5>
+                <ul>
+                    <li>mise en place d'outils papier et numériques de communication interne ( lettre, magazine, newsletter )</li>
+                    <li>conduite de projets pluridisciplinaires en lien avec les affinités des collaborateurs</li> 
+                    <li>écriture de discours pour les directions </li>
+                    <li>accompagnement du changement </li>
+                    <li>communication managériale</li>
+                </ul>
+            </div>
+            <div id="digital" class="content-box">
+                
+            </div> 
+            <div id="evenementiel" class="content-box">
+                <h5>Mieux être pour mieux faire : c'est aussi donner du sens à ses actions</h5> 
+                <ul>
+                    <li>Mise en place d'ateliers participatifs et collaboratifs à partir des talents de l'entreprise</li>
+                    <li>développement d'un réseau de partenaires liés à la promotion du bien-être en entreprise </li>
+                    <li>développement du sport au travail</li> 
+                    <li>embellissement des lieux de vie</li>
+                </ul>    
+            </div>
+            <div id="mecenat" class="content-box">
+                <img src="img/mecenat0.jpg" />
+            </div>
+            <div id="photo" class="content-box">
+                <img class="mesSlides" src="img/photo_Reve.jpg" />
+                <img class="mesSlides" src="img/photo_rencontres.jpg" />
+                <img class="mesSlides"  src="img/photo_concentration.jpg" />
+                
+                <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+                <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+                
+            </div>
+            <!--
+            <div id="video" class="content-box">
+            
+            </div>
+            -->
+            <div id="presse" class="content-box">
+            
+            </div>
+            
         </section>
     </div>
     

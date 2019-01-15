@@ -6,6 +6,12 @@ Primary style
 *, *::after, *::before {
   box-sizing: border-box;
 }
+
+html, body {
+    height:100%;
+    margin:0;
+}
+
 body {
   font-size: 1.6rem;
   font-family: "Open Sans", sans-serif;
@@ -14,8 +20,7 @@ body {
 }
 
 a {
-  color: #2e416a;
-  text-decoration: none;
+    text-decoration: none;
 }
 
 /* -------------------------------- 
@@ -40,11 +45,23 @@ General Style
     vertical-align: middle;
     text-align: center;
     padding: 0 5%;
-    background: url('img/fondIntro.png') center  #000;
-    background-size: 800px;
+    
+    background-image: url(img/fondIntro.png);
+	background-position: 0px 0px;
+	background-repeat: repeat;
+    background-color: black;
+    
+	animation: animatedBackground 40s linear infinite;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;   
 }
+
+
+@keyframes animatedBackground {
+	from { background-position: 0 0; }
+	to { background-position: 100% 0; }
+}
+
 .cd-intro-content h1 {
     font-size: 4rem;
     font-weight: 300;
@@ -102,7 +119,7 @@ General Style
   background-color: /*#7adda2 ;*/
 }
 .cd-btn.main-action:hover {
-  background-color: #87e2b5;
+  background-color: #61d990;
 }
 @media only screen and (min-width: 480px) {
   .cd-btn {

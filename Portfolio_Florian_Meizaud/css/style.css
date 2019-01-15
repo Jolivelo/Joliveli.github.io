@@ -1,11 +1,8 @@
-html, body {
-    height:100%;margin:0;
-}
+/*-----------------------
 
+MENU DE NAVIGATION
 
-
-
-
+-----------------------*/
 
 #siteWrapper header {
     height:80px;
@@ -18,43 +15,358 @@ html, body {
     width:100%;
     top:0;
     left:0;
+    z-index: 100;
+    box-shadow: 0 30px 0 white;
 }
 
-#siteWrapper ul {
-    padding: 25px 0;
+#siteWrapper nav{
+    height:100%;
+    width:100%;
+     animation: fadein 3s;
+    -moz-animation: fadein 3s; /* Firefox */
+    -webkit-animation: fadein 3s; /* Safari et Chrome */
+    -o-animation: fadein 3s; /* Opera */
+}
+
+#siteWrapper nav ul {
+    position: relative;
+    width:100%;
     margin:0;
+    padding: 0;
+    padding-bottom: 10px;
     text-align: center;
+    overflow: hidden;
 }
 
-#siteWrapper header li {
-    display: inline;
-    margin: 1rem;
+#siteWrapper nav li {
+    position: relative;
+    padding: 0;
+    display:block;
+    background-color: black;
     color: white;
+    font-family: 'Prata', serif;
+    transition: 0.3s;
+    font-size: 0.5em; 
 }
 
-@media only screen and (min-width: 768px) {
-  #siteWrapper header li {
-    margin:3rem; 
-  }
+#siteWrapper nav span {
+    position: relative;
+    margin:0;
+    padding:0;
+    font-family: 'Parisienne', cursive;
+    font-size: 2em;
+    color:#f67f81; /*#7adda2;*/
+    transition: 0.3s;
+
 }
 
-#siteWrapper header a {
+#siteWrapper nav li a{
+    position: relative;
+    font-size: 1em;  
+    font-style: italic;
     color: inherit;
 }
 
 
+#siteWrapper nav li:hover {
+    background-color:#f67f81;
+}
+#siteWrapper nav li:hover span{
+    color: white;
+}
+
+
+  /* ANIMATIONS MENU */ 
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* sur Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* sur Safari et Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* sur Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* MEDIA QUERIES DU MENU DE NAVIGATION*/
+
+/* Affichage menu colonne élargi**/
+@media only screen and (min-width: 480px) {
+    #siteWrapper nav li {
+        font-size: 0.7em;
+    }
+}
+
+/* Affichage menu ligne: par défaut**/
+    
+@media only screen and (min-width: 768px) {
+     #siteWrapper nav ul {
+        height:100%;
+        padding: 15px 0;
+    }
+    
+    #siteWrapper nav li {
+        background-color: rgba(255, 255, 255, 0);
+        display: inline;
+        padding: 40px 5px 36px 5px;
+    }
+}
+
+@media only screen and (min-width: 960px) {
+   
+    #siteWrapper nav li {
+        display: inline;
+        padding: 40px 22px 36px 22px;
+    }
+
+    
+}
+   
+@media only screen and (min-width: 1280px) {
+    
+     #siteWrapper nav ul {
+        height:100%;
+        padding: 10px 0;
+    }
+    #siteWrapper nav li {
+        padding-right: 3rem;
+        padding-top: 48px;        
+        min-width:200px;
+    }
+    
+    #siteWrapper nav li a{
+        top:-16px;   
+    }
+    
+    #siteWrapper nav span {
+        font-size:4em;
+        line-height: 75px;
+    }
+    
+}
+
+/*---------------------
+
+Contenu de la page
+
+------------------------*/
+
 #content {
-    padding:60px 0;
+    padding:300px 0;
     background:white;
+    background: url(img/fondIntro.png) fixed;
+    color:white;
+    font-family: 'Roboto', sans-serif;
+    
+	animation: animatedBackground 40s linear infinite;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;   
 }
 
-#siteWrapper header.fixed+#content {
-    margin-top:80px;
+
+header.fixed+#content{
+        margin-top:80px;
 }
 
-#content div {
+#content .content-box{
     width:80%;
-    height:1000px;
     margin:auto;
-    border:solid;
+    margin-bottom: 400px;
+    padding:3em;
+    padding-top:150px;
+    padding-bottom:200px;
+    background-color: black;
 }
+
+
+.content-box h5{
+    max-width:100%;
+    margin:1em;
+    quotes: "«" "»";
+    font-family: 'Prata', serif;
+    font-size: 0.75em;
+    font-weight: 100;
+    text-align: left;
+    text-shadow: 0 0 1px white;
+}
+
+
+.content-box h5::before{
+    position: relative;
+    top:10px;
+    left:-30px;
+    color:#58585a;
+    content: open-quote;
+    font-size: 3em;
+    line-height: 30px;
+    text-shadow: none;
+    
+}
+
+.content-box h5::after{
+    position: relative;
+    top:10px;
+    left:35px;
+    color:#58585a;
+    content: close-quote;
+    font-size: 3em;
+    line-height: 30px;
+    text-shadow: none;
+}
+
+
+@media only screen and (min-width: 768px) {
+    #content{
+        padding: 300px 0;
+    }
+}
+@media only screen and (min-width: 1280px) {
+    .content-box h5{
+        font-size: 1em;
+    }
+}
+
+.content-box img {
+   width:500px;
+}
+
+.content-box ul {
+    padding-left:0;
+    list-style: none; 
+    text-align: center; 
+    font-size:0.75em;
+    font-weight:100;
+}
+
+.content-box ul::before{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 20px;
+    background-color:  #58585a;
+    position: relative;;
+    left: 0;
+    bottom: -15px;
+    margin-top:100px;
+}
+
+.content-box li {
+    margin-bottom:50px;
+    margin-top:100px;
+    display:table;
+}
+
+.content-box li::before{
+    content:'#';
+    font-family: 'Parisienne', cursive;
+    font-size: 2em;
+    color: 
+}
+
+.content-box li::after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 5px;
+    background-color:  #58585a;
+    position: relative;;
+    left: 0;
+    bottom: -15px;
+}
+
+
+
+
+/*--------------------
+Blocs de contenus particuliers
+---------------------*/
+
+
+
+
+#introText h6{
+    position: relative;
+    top:-50px;
+    margin: 0;
+    padding-top:10px;
+    float: right;
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.8em;
+    font-weight: 100;
+    color: #58585a;
+    text-shadow: 0 0 1px #999999; 
+}
+
+#introText span{    
+    position: relative;
+    top:15px;
+    right:-280px;
+    margin:0;
+    
+    float:right;
+    font-family: 'Prata', serif;
+    font-size:0.8em;
+    font-style: italic;
+    color: #232427;
+}
+
+.mySlides {
+    display:none;
+}
+
+@media only screen and (min-width: 768px) {
+    #introText span{    
+        position: relative;
+        left:280px;
+        margin:0;
+    }
+}
+
+
+@media only screen and (min-width: 1280px) {
+
+    
+    #introText h6{    
+        position: relative;
+        left:-100px;
+        margin:0;
+    }
+    
+    #introText span{    
+        position: relative;
+        left:180px;
+        margin:0;
+    }
+    
+    
+}
+
+
+
+
+
+
