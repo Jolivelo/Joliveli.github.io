@@ -1,11 +1,19 @@
+/*----------------------------
+
+STYLE DE BASE
+
+---------------------------*/
+
 body{
-    background-color: #f9f2f0; 
     margin:0;
     padding: 0;
-    font-family: 'Roboto';
-    color: #504034;
     overflow-x: hidden;
     overflow-y: auto; 
+    
+    background-color: #f9f2f0; 
+    font-family: 'Roboto';
+    color: #504034;
+
 }
 
 header{
@@ -27,7 +35,7 @@ h1:hover{
     color: #f9f2f0;
 }
 
-h1 a{
+a{
     text-decoration: none;
     color: inherit;
 }
@@ -37,11 +45,14 @@ h2{
     padding-top: 0;
     font-family: 'Roboto light';
     text-align: center;
-
 }
 
 
-/** Nav Bar **/ 
+/*---------------------------------
+
+Liens de navigation 
+
+----------------------------------*/ 
 
 #rotate{
     transform: rotate(60deg);
@@ -100,8 +111,46 @@ header #rotate a{
 #ban4:hover{background-color:#f9f2f0;}#ban5:hover{background-color:#f9f2f0;}#ban6:hover{background-color:#f9f2f0;}
 
 
-/** Class pour animations JS du mini Header **/
-.slideUp{
+/*----------------------------
+
+Mini barre de navigation
+
+----------------------------*/
+
+#miniHeader {
+    position: fixed;
+
+}
+#miniHeader h1 {
+    font-size: 1em;
+    text-align: left;
+    position: relative;
+    left:20px;
+    background-color: #f9f2f0;
+}
+#miniHeader h2 {
+    text-align: right;
+    font-size: 1em;
+    position: relative;
+    left:20px;
+        background-color: #f9f2f0;
+
+}
+#miniHeader li {
+    height: 40px;
+    border-radius: 20px;
+    margin-right: 0;
+    text-align: right;
+    list-style: none;
+}
+#miniHeader a {
+    text-decoration: none;
+    color: #504034;    
+    vertical-align: middle;
+}
+
+/** Classe pour animations JS du mini Header **/
+.slideUp {
     animation-name: slideUp;
   -webkit-animation-name: slideUp;
   animation-duration: 1s;
@@ -109,7 +158,7 @@ header #rotate a{
     visibility: hidden;
 }
 
-@keyframes slideDown {
+@keyframes slideUp {
   0% {
     opacity: 1;
   } 
@@ -118,7 +167,7 @@ header #rotate a{
   }
 }
 
-@-webkit-keyframes slideDown {
+@-webkit-keyframes slideUp {
   0% {
     opacity: 1;
   } 
@@ -153,48 +202,16 @@ header #rotate a{
   }
 }
 
-#miniHeader{
-    position: fixed;
-
-}
-
-#miniHeader h1{
-    font-size: 1em;
-    text-align: left;
-    position: relative;
-    left:20px;
-    background-color: #f9f2f0;
-}#miniHeader h2{
-    text-align: right;
-    font-size: 1em;
-    position: relative;
-    left:20px;
-        background-color: #f9f2f0;
-
-}
-
-#miniHeader li{
-    height: 40px;
-    border-radius: 20px;
-    margin-right: 0;
-    text-align: right;
-    list-style: none;
-}
-
-
-
-#miniHeader a{
-    text-decoration: none;
-    color: #504034;    
-    vertical-align: middle;
-}
 
 
 
 
 
+/*---------------------------------------- 
 
-/** SECTION CENTRALE DES PAGES**/
+SECTION CENTRALE DES PAGES
+
+-------------------------------------------*/
 
 section{
     position: relative;
@@ -203,7 +220,6 @@ section{
     margin-right:5%;
     background: white;
     padding:50px;
-    padding-bottom: 100px;
     z-index: -10;
     border-radius: 7px;
 }
@@ -215,7 +231,156 @@ section h4{
     margin: 0;
 }
 
-section h5{
+
+
+section p{
+    font-size:1.2em;
+
+}
+
+section p::first-letter{
+    font-size: 1.4em;
+    font-family: 'Roboto Slab';
+}
+
+
+
+
+/*-------------------------------------------
+
+Elements de contenu particulier
+
+--------------------------------------------*/
+
+
+#intro {
+    font-family: 'Roboto Mono', sans-serif;
+}
+
+#intro h4{
+    position:absolute;
+    top:75px;
+    font-size: 4em;
+    text-decoration: none;
+    color: #f9f2f0;
+}
+
+#intro h5 {
+    width:100%;
+    text-align: center;
+    margin: 0 0 45px 0;
+    font-size:1.9em;
+    text-align: center;
+    color: #504034;
+}
+
+#intro h5 span {
+    position: relative;
+    display: inline-block;
+}
+
+#intro h5 span::after {
+    
+    
+   /* content: '';
+    display: block;
+    width: 100%;
+    height: 8px;
+    background-color: #f9f2f0; ; Souligne a la taille du texte grace a h5 et la position de span
+    position: absolute;
+    left: 0;
+    bottom: -15px; */
+    
+    
+}
+#intro ul{
+    margin: 0 50px 0 50px;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+#intro li{
+    display: inline-block;
+    margin:10px;
+    
+}
+
+
+#intro li a::before{
+    content: '';
+    position: relative;
+    left: 0;
+    bottom: -24px;
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: #9a688b;    
+    z-index: 110;
+    -webkit-transition: all 0.4s ease;
+    transition: all .4s ease;
+}
+
+#intro li:hover a::before{
+    width:100%
+}
+
+#intro li a::after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #7bafd2;
+    position: relative;
+    left: 0;
+    bottom: -1px;
+}
+
+#intro a::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #7bafd2;
+    position: relative;
+    left: 0;
+    bottom: -5px;
+    animation: linkHover 0.
+    
+}
+
+
+@keyframes linkHover {
+  0% {
+    background-position: 0%; 
+  } 
+  100% {
+    background-position: 100%; 
+  }
+}
+
+@-webkit-keyframes linkHover {
+  0% {
+    background-position: 0%; 
+  } 
+  100% {
+    background-position: 100%; 
+  }
+}
+
+
+#about p{
+    text-align: center;
+}
+
+#about a{
+    color: #6687b1;
+}
+
+#about a:hover{
+    color: #7bafd2;
+}
+
+#about h5{
     font-family: 'Roboto Slab';
     color: #6687b1;
     font-size: 1.5em;
@@ -225,43 +390,15 @@ section h5{
     border-top: 10px solid #f9f2f0; 
 }
 
-section p{
-    font-size:1.2em;
-    letter-spacing: 0.001em;
-    width:70%;
+
+#about img{
+    display: block;
+    margin: 0 auto; 
+    height: 200px;
+    border: 10px solid #f9f2f0; 
+    border-radius: 110px; 
 }
 
-section p::first-letter{
-    font-size: 1.4em;
-    font-family: 'Roboto Slab';
-}
-
-section .text-right{
-    margin-left:30px;
-    float:right;
-    height:100%;
-    width:30%;
-    padding-left:20px;
-    border-left: 10px solid #f9f2f0; 
-    font-size: 1em;
-    padding-bottom:40px;
-}
-
-section .text-right p{
-    margin:0;
-}
-
-section a{
-    color: #6687b1;
-}
-
-section .fa{
-    font-size: 7em;
-}
-
-section a:hover{
-    color: #7bafd2;
-}
 
 
 footer{
@@ -274,7 +411,7 @@ footer{
 
 footer ul{
     margin:0;
-    padding: 50px;
+    padding: 5px;
     text-align: left;
     vertical-align: middle;
 }
@@ -288,7 +425,7 @@ footer li{
 footer li .fa{
     color: #f9f2f0;
     list-style: none;
-    font-size:4em;
+    font-size:1em;
 }
 
 
