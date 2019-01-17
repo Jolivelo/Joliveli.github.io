@@ -10,12 +10,14 @@ Primary style
 html, body {
     height:100%;
     margin:0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;  
 }
 
 body {
-  font-size: 1.6rem;
+  font-size: 1rem;
   font-family: "Open Sans", sans-serif;
-  color: #040404;
+  color: white;
   background-color: #ffffff;
 }
 
@@ -30,7 +32,7 @@ General Style
 -------------------------------- */
 .cd-intro {
     position: relative;
-    height: calc(100vh - 80px);
+    height: 100vh;
     width: 100%;
     /* vertically align its content */
     display: table;
@@ -67,9 +69,8 @@ General Style
     font-weight: 300;
     color: #ffffff;
     font-family: 'Parisienne', cursive; 
-
+    text-shadow: 0 0 5px #c3c3c2;
 }
-
 
 .cd-intro-content p {
   font-size: 1rem;
@@ -91,7 +92,7 @@ General Style
 }
 @media only screen and (min-width: 768px) {
   .cd-intro-content h1 {
-    font-size: 5.2rem;
+    font-size: 7rem;
     font-weight: 300;
   }
   .cd-intro-content p {
@@ -100,35 +101,65 @@ General Style
   }
 }
 
+.cd-intro-content h5{
+    font-family: 'Playfair Display', sans-serif;
+    font-weight: 900;
+    font-size: 2.5rem;
+    line-height: 2.2rem;
+    text-transform: uppercase;
+    opacity: 0.3;
+    animation: fadeintro 3s;
+    -moz-animation: fadeintro 3s; /* Firefox */
+    -webkit-animation: fadeintro 3s; /* Safari et Chrome */
+    -o-animation: fadeintro 3s; /* Opera */
+}
+
+@keyframes fadeintro {
+    from {opacity:0;}
+    to {opacity:0.3;}
+}
+@-moz-keyframes fadeintro { /* sur Firefox */
+    from {opacity:0;}
+    to {opacity:0.3;}
+}
+@-webkit-keyframes fadeintro { /* sur Safari et Chrome */
+    from {opacity:0;}
+    to {opacity:0.3;}
+}
+@-o-keyframes fadeintro { /* sur Opera */
+    from {opacity:0;}
+    to {opacity:0.3;}
+}
+
+
 .cd-btn {
   display: inline-block;
-  padding: 1em 1em;
-  font-family: 'Prata', serif;
-  font-size: 1rem;
-  color: #ffffff;
+  padding: 10px;
+  font-size: 2.5rem;
+  color: black;
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: 1px;
-  background-color: #7adda2;
-  margin-right: 1.5em;
+  background-color: transparent;
+  transition: all 0.2s;
 }
 .cd-btn:nth-of-type(2) {
   margin-right: 0;
 }
 .cd-btn.main-action {
-  background-color: /*#7adda2 ;*/
+  background-color: white;
 }
 .cd-btn.main-action:hover {
-  background-color: #61d990;
+  background-color: #7adda2 ;
 }
 @media only screen and (min-width: 480px) {
   .cd-btn {
-    padding: 1.2em 1.6em;
+    padding: 0.2em 0.3em;
   }
 }
 @media only screen and (min-width: 768px) {
   .cd-btn {
-    padding: 1.4em 1.8em;
+    padding: 0.2em 0.5em;
   }
 }
 
@@ -353,8 +384,10 @@ text-shadow: 0 0 100px black;
 }
 .mask.cd-intro-content .action-wrapper .cd-btn {
   opacity: 1;
-  margin: 0 0 0 0em;
 }
+
+
+
 .mask.cd-intro-content .action-wrapper .cd-btn:first-of-type {
   margin-left: 0;
 }
