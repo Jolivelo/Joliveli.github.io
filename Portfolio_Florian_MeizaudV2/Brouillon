@@ -1,0 +1,55 @@
+
+/* Affichage menu colonne élargi**/
+@media only screen and (orientation: portrait) or (min-width: 480px) {
+    #siteWrapper nav li {
+        font-size: 0.7em;
+    }
+}
+
+/* Affichage menu ligne: par défaut**/
+    
+@media only screen and (orientation: portrait) or (min-width: 768px) {
+     #siteWrapper nav ul {
+        height:100%;
+        padding: 15px 0;
+    }
+    
+    #siteWrapper nav li {
+        background-color: rgba(255, 255, 255, 0);
+        display: inline;
+        padding: 40px 5px 36px 5px;
+    }
+}
+
+@media only screen and (orientation: portrait) or (min-width: 960px) {
+   
+    #siteWrapper nav li {
+        display: inline;
+        padding: 40px 22px 36px 22px;
+    }
+
+    
+}
+   
+@media only screen and (orientation: portrait) or (min-width: 1280px) {
+    
+     #siteWrapper nav ul {
+        height:100%;
+        padding: 10px 0;
+    }
+    #siteWrapper nav li {
+        padding-right: 3rem;
+        padding-top: 48px;        
+        min-width:200px;
+    }
+    
+    #siteWrapper nav li a{
+        top:-16px;   
+    }
+    
+    #siteWrapper nav span {
+        font-size:4em;
+        line-height: 75px;
+    }
+    
+}

@@ -1,0 +1,448 @@
+/* -------------------------------- 
+
+Primary style
+
+-------------------------------- */
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+html, body {
+    height:100%;
+    margin:0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;  
+}
+
+body {
+  font-size: 1rem;
+  font-family: "Open Sans", sans-serif;
+  color: white;
+  background-color: #ffffff;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* -------------------------------- 
+
+General Style
+
+-------------------------------- */
+#introNav{
+    height:calc(100vh - 30px);
+}
+
+.cd-intro {
+    position: relative;
+    height: 50vh;
+    width: 100%;
+    /* vertically align its content */
+    display: table;
+    overflow: hidden;
+    border: 30px solid white;
+}
+
+.cd-intro-content {
+    /* vertically align inside its parent */
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    padding: 0 5%;
+    
+    background-image: url(img/fondIntro.png);
+	background-position: 0px 0px;
+	background-repeat: repeat;
+    background-color: rgba(0, 0, 0, 0.9);
+    
+	animation: animatedBackground 40s linear infinite;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;   
+}
+
+
+@keyframes animatedBackground {
+	0% { background-position: 0 0; }
+	50% { background-position: 100% 0; }
+	100% { background-position: 0 0; }
+}
+
+.cd-intro-content h1 {
+    font-size: 4rem;
+    font-weight: 300;
+    color: #ffffff;
+    font-family: 'Parisienne', cursive; 
+    text-shadow: 0 0 5px #c3c3c2;
+}
+
+.cd-intro-content p {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin: 1em 0;
+  color: white;
+}
+
+.cd-intro-content h5{
+    margin:0;
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+
+    opacity: 1;
+    animation: fadeintro 3s;
+    -moz-animation: fadeintro 3s; /* Firefox */
+    -webkit-animation: fadeintro 3s; /* Safari et Chrome */
+    -o-animation: fadeintro 3s; /* Opera */
+}
+.cd-intro-content .action-wrapper {
+  display: inline-block;
+}
+.cd-intro-content .action-wrapper::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+.cd-intro-content .action-wrapper > * {
+  float: left;
+}
+@media only screen and (min-width: 960px) {
+  .cd-intro-content h1 {
+    font-size: 7rem;
+    font-weight: 300;
+  }
+  .cd-intro-content h5 {
+    font-size: 2rem;
+    margin: 1.5em 0 1.9em;
+  }
+}
+
+
+
+
+
+@media only screen and (orientation: landscape){
+    .cd-intro-content h1 {
+    font-size: 4rem;
+    font-weight: 300;
+  }
+  .cd-intro-content h5 {
+    font-size: 1.5rem;
+  }
+}
+
+
+@keyframes fadeintro {
+    from {opacity:0;}
+    to {opacity:1;}
+}
+@-moz-keyframes fadeintro { /* sur Firefox */
+    from {opacity:0;}
+    to {opacity:1;}
+}
+@-webkit-keyframes fadeintro { /* sur Safari et Chrome */
+    from {opacity:0;}
+    to {opacity:1;}
+}
+@-o-keyframes fadeintro { /* sur Opera */
+    from {opacity:0;}
+    to {opacity:1;}
+}
+
+
+.cd-btn {
+  display: inline-block;
+  padding: 10px;
+  font-size: 2.5rem;
+  color: black;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  background-color: transparent;
+  transition: all 0.2s;
+}
+.cd-btn:nth-of-type(2) {
+  margin-right: 0;
+}
+.cd-btn.main-action {
+  background-color: white;
+}
+.cd-btn.main-action:hover {
+  background-color: #7adda2 ;
+}
+@media only screen and (min-width: 480px) {
+  .cd-btn {
+    padding: 0.2em 0.3em;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .cd-btn {
+    padding: 0.2em 0.5em;
+  }
+}
+
+.cd-intro-content h1,
+.cd-intro-content h1 span,
+.cd-intro-content p,
+.cd-intro-content .cd-btn {
+  opacity: 0;
+  -webkit-animation-duration: 0.8s;
+  -moz-animation-duration: 0.8s;
+  animation-duration: 0.8s;
+  -webkit-animation-delay: 0.3s;
+  -moz-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+.no-cssanimations .cd-intro-content h1, .no-cssanimations
+.cd-intro-content h1 span, .no-cssanimations
+.cd-intro-content p, .no-cssanimations
+.cd-intro-content .cd-btn {
+  opacity: 1;
+}
+
+
+
+@media only screen and (min-width: 768px) {
+  .reveal.cd-intro-content .action-wrapper .cd-btn {
+    display: inline-block;
+    margin: 0 0 0 1em;
+  }
+}
+
+@-webkit-keyframes cd-reveal-up {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+  }
+}
+@-moz-keyframes cd-reveal-up {
+  0% {
+    opacity: 1;
+    -moz-transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    -moz-transform: translateY(0);
+  }
+}
+@keyframes cd-reveal-up {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(100%);
+    -moz-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    -o-transform: translateY(100%);
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes cd-reveal-down {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+  }
+}
+@-moz-keyframes cd-reveal-down {
+  0% {
+    opacity: 1;
+    -moz-transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    -moz-transform: translateY(0);
+  }
+}
+@keyframes cd-reveal-down {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes cd-loading {
+  0% {
+    -webkit-transform: scaleX(0);
+  }
+  100% {
+    -webkit-transform: scaleX(1);
+  }
+}
+@-moz-keyframes cd-loading {
+  0% {
+    -moz-transform: scaleX(0);
+  }
+  100% {
+    -moz-transform: scaleX(1);
+  }
+}
+@keyframes cd-loading {
+  0% {
+    -webkit-transform: scaleX(0);
+    -moz-transform: scaleX(0);
+    -ms-transform: scaleX(0);
+    -o-transform: scaleX(0);
+    transform: scaleX(0);
+  }
+  100% {
+    -webkit-transform: scaleX(1);
+    -moz-transform: scaleX(1);
+    -ms-transform: scaleX(1);
+    -o-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+}
+/* -------------------------------- 
+
+Mask
+
+-------------------------------- */
+.mask.cd-intro-content h1 {
+  position: relative;
+  padding-bottom: 10px;
+  /* overwrite default style */
+  opacity: 1;
+  /* <h1> text is not visible - it is used only as a container for the ::after element */
+  color: transparent;
+  overflow: hidden;
+}
+.mask.cd-intro-content h1::after {
+  /* this is the animated text */
+  content: attr(data-content);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  color: #ffffff;
+  -webkit-animation-name: cd-reveal-up;
+  -moz-animation-name: cd-reveal-up;
+  animation-name: cd-reveal-up;
+  -webkit-animation-fill-mode: backwards;
+  -moz-animation-fill-mode: backwards;
+  animation-fill-mode: backwards;
+}
+.mask.cd-intro-content h1 span {
+  position: relative;
+  display: inline-block;
+  opacity: 1;    
+text-shadow: 0 0 100px black;
+}
+.mask.cd-intro-content h1 span::before {
+  /* this is the loading bar */
+  content: '';
+  position: absolute;
+  top: calc(100% + 8px);
+  left: -1em;
+  height: 2px;
+  width: calc(100% + 2em);
+  background-color: #ffffff;
+  -webkit-animation: cd-loading-mask 1s 0.3s both;
+  -moz-animation: cd-loading-mask 1s 0.3s both;
+  animation: cd-loading-mask 1s 0.3s both;
+}
+@media only screen and (min-width: 768px) {
+  .mask.cd-intro-content h1 {
+    padding-bottom: 20px;
+  }
+  .mask.cd-intro-content h1 span::before {
+    top: calc(100% + 18px);
+  }
+}
+
+.mask.cd-intro-content p {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  -webkit-animation-name: cd-reveal-down;
+  -moz-animation-name: cd-reveal-down;
+  animation-name: cd-reveal-down;
+}
+
+.mask.cd-intro-content h1::after,
+.mask.cd-intro-content p {
+  -webkit-animation-duration: 0.4s;
+  -moz-animation-duration: 0.4s;
+  animation-duration: 0.4s;
+  -webkit-animation-delay: 0.7s;
+  -moz-animation-delay: 0.7s;
+  animation-delay: 0.7s;
+}
+
+.mask.cd-intro-content .action-wrapper {
+  overflow: hidden;
+}
+.mask.cd-intro-content .action-wrapper .cd-btn {
+  opacity: 1;
+}
+
+
+
+.mask.cd-intro-content .action-wrapper .cd-btn:first-of-type {
+  margin-left: 0;
+}
+
+@-webkit-keyframes cd-loading-mask {
+  0%, 100% {
+    -webkit-transform: scaleX(0);
+  }
+  40%, 60% {
+    -webkit-transform: scaleX(1);
+  }
+}
+@-moz-keyframes cd-loading-mask {
+  0%, 100% {
+    -moz-transform: scaleX(0);
+  }
+  40%, 60% {
+    -moz-transform: scaleX(1);
+  }
+}
+@keyframes cd-loading-mask {
+  0%, 100% {
+    -webkit-transform: scaleX(0);
+    -moz-transform: scaleX(0);
+    -ms-transform: scaleX(0);
+    -o-transform: scaleX(0);
+    transform: scaleX(0);
+  }
+  40%, 60% {
+    -webkit-transform: scaleX(1);
+    -moz-transform: scaleX(1);
+    -ms-transform: scaleX(1);
+    -o-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+}
