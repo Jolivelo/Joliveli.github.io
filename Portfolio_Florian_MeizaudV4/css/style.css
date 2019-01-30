@@ -1,0 +1,765 @@
+/*-----------------------
+MENU DE NAVIGATION
+-----------------------*/
+
+
+
+header {
+    position: relative;
+    top:30px;
+    height:calc(50vh - 70px); 
+    padding-left:30px; 
+    font-size: 3rem;
+    animation: animatedBackground 40s linear infinite, fadein 2s;
+    -webkit-animation: animatedBackground 40s linear infinite, fadein 2s;/* Safari et Chrome */
+    -moz-animation: animatedBackground 40s linear infinite, fadein 2s;/* Firefox */
+    -o-animation: animatedBackground 40s linear infinite, fadein 2s;/* Opera */
+}
+
+nav{
+    position: relative;
+    height:100%;
+    width:100%;
+    display: grid;
+    grid-template-columns: 50px auto; 
+}
+
+
+
+/*--------------------------
+
+Lien vers top page
+
+--------------------------------*/
+
+
+#sticker{
+    width:50px;
+    height:50px;
+    margin:18vh 0 0 0;
+    transition: all 0.3s;
+    background-color: rgba(122, 211, 162, 0.8);
+     border:1px solid rgba(122, 211, 162, 0.8);
+    color:white;
+    text-align: center;
+}
+
+#sticker:hover{
+    background-color: rgba(122, 211, 162, 0); 
+    border:1px solid rgba(122, 211, 162, 0.8);
+}
+
+#sticker a{
+    position: relative;
+    height: 100%;
+    width:100%;
+    top:-5px;
+    font-family: 'Montserrat', sans-serif;
+    color:white;
+    font-size: 2.5rem;
+}
+
+/*--------------------------
+
+Liens du menu
+
+-------------------------*/
+
+nav ul {
+    position: relative;
+    list-style: none;
+    width:100%;
+    height:100%;
+    margin:0;
+    padding: 0;
+    display:grid;
+    grid-auto-rows: auto;
+    align-items: center;
+}
+
+nav li {
+    position: relative;
+    top: -25px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+
+
+
+nav .rub{
+    position: relative;
+    width:calc(100% - 200px);
+    margin-left:100px;  
+    font-style: ;
+    color: inherit;
+
+}
+
+nav li .rub::before{
+    content: '#';
+    position: absolute;
+    left:-50px;
+    margin:0;
+    padding:0;
+    font-family: 'Montserrat', serif;
+    font-weight: 100;    
+    color:#7adda2;
+    font-style: normal;
+    transition: 0.3s;
+}
+
+
+nav li .rub::after{
+    content:'';
+    display: block;
+    width: 0%;
+    height: 10px;
+    background-color: #7adda2;
+    position: absolute;
+    top:46px;
+    left:0;
+}
+
+
+nav li:hover .rub::after{
+    width:100%;    
+    animation: slideLeft 0.5s ease;
+}
+
+
+@media only screen and (orientation: landscape) {
+    header{
+        padding-left:30px; 
+ 
+    }
+}
+
+
+
+
+
+
+
+
+  /* ANIMATIONS MENU */
+@keyframes slideLeft {
+    from {width:0%;}
+    to {width:100%;}
+}
+@-moz-keyframes slideLeft { /* sur Firefox */
+    from {width:0%;}
+    to {width:100%;}
+}
+@-webkit-keyframes slideLeft { /* sur Safari et Chrome */
+    from {width:0%;}
+    to {width:100%;}
+}
+@-o-keyframes slideLeft { /* sur Opera */
+    from {width:0%;}
+    to {width:100%;}
+}
+
+
+
+/*---------------------
+
+Contenu de la page
+
+------------------------*/
+
+#content {
+    position: relative;
+    padding-top:30px;
+ 
+    font-family: 'Montserrat', sans-serif; 
+    overflow: hidden;
+}
+
+#content .content-box{
+    background-image: linear-gradient(to right, rgba(25, 25, 25, 1) 50%, rgba(25, 25, 25, 0));
+    margin: 200px 30px;
+    padding-top:50px;
+    padding-bottom:50px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;   
+    display: grid;
+    grid-template-columns: auto 0;
+    box-shadow: 0 0 30px #151515;
+
+    transition: all 0.5s;
+    border: 10px solid transparent;
+}
+
+#content .content-box:hover{
+    background-color: rgba(25, 25, 25, 1);
+    border: 10px solid rgba(255, 255, 255, 0.8);
+}
+
+@media only screen and (orientation: landscape) {
+    #content{
+        margin-left: 100px; 
+        margin-right: 100px; 
+    }
+}
+
+
+content-inbox{
+    margin-right: 50px;
+    display: grid;
+    grid-template-rows: 0 auto;
+}
+
+.content-title{ 
+    height:0;
+}
+.content-title h4{
+    position: relative;
+    top:-106px;
+    left:100px;
+    margin: 0;
+}
+
+.content-title h4 span{
+    position: relative;
+    font-family: 'Montserrat', serif;
+    font-size: 3rem;
+    color: white; 
+    font-weight: 100;
+}
+
+
+
+#content .content-box .content-title h4 span::after {
+    content:'';
+    display: block;
+    width: 0%;
+    height: 10px;
+    background-color: #191919;
+    position: absolute;
+    top:46px;
+    left:0;
+}
+
+
+#content .content-box:hover .content-title span::after {
+    width:100%;    
+    animation: slideLeft 0.5s ease;
+}
+
+
+
+
+.content-title h4::before{
+    content: '#';
+    position: absolute;
+    left:-30px;
+    margin:0;
+    padding:0;
+    font-family: 'Montserrat', serif;
+    font-size: 3rem;
+    font-weight: 100;   
+    color: #f37d7f;
+}
+
+.content-text{
+    margin-left: 100px;
+    padding-right: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    quotes: "«" "»";
+}
+
+.content-text h5{
+    font-family: 'Parisienne', cursive;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: 2.5rem;
+    margin:0;
+}
+
+.content-text h5::before{
+    content: open-quote;
+    position: relative;
+    top: 20px;
+    left: -10px;
+    font-family: 'Montserrat';
+    font-weight: 100;
+    color: #f37d7f;
+    font-size: 2.5em;
+    text-shadow: none;   
+}
+
+.content-text h5::after{
+    content: close-quote;
+    position: relative;
+    top: 20px;
+    left: 10px;
+    font-family: 'Montserrat';
+    font-weight: 100;
+    color: #f37d7f;
+    font-size: 2.5em;
+    text-shadow: none;    
+    line-height: 0rem;
+}
+
+.content-text ul {
+    width:80%;
+    padding-left:0;
+    list-style: none; 
+    font-size:0.75em;
+    font-weight:100;
+}
+
+.content-text li {
+    margin-top:30px;
+}
+
+.content-text li:first-letter{
+    font-weight: 400;
+    font-size: 2.5rem;
+    text-transform: capitalize;
+    color: #f37d7f;
+}
+
+.content-text img{
+    height: auto;
+    max-height: 700px;
+    width:auto;
+    max-width:50%;
+    margin:50px 10px 50px 0px ;
+    float: left;
+}
+
+.content-text p{
+    font-size: 1.5rem;
+    font-weight: 100;
+}
+
+.content-text .legende{
+    margin-top: 100px;
+    max-width: 960px;
+    font-size: 0.75rem;
+    font-weight: 100;
+}
+
+@media only screen and (orientation: landscape) {
+    .content-text .legende{
+        font-size: 1.25rem;
+    }
+}
+
+
+.content-text .legende::after{
+    content:'';
+    display: block;
+    width: 80%;
+    height: 1px;
+    margin-top:10px;
+    background-color: grey;
+}
+
+/*-----------------------------------
+
+Slider image pour photos
+
+----------------------------------*/
+
+.content-img{
+        margin-left: 100px;
+}
+
+.trigger {
+    display: none;
+}
+
+.slider, .slider-wrapper {
+    position: relative;
+    min-height:500px;
+}
+
+.slider {
+    margin-right: 50px;
+}
+
+.slide {
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 5000;
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
+    border: 20px solid transparent;
+    border-radius: 10px;
+}
+
+.slide-img {
+    height: 100%;
+    object-fit: fill;
+    display: block;
+    margin: 0 auto;
+}
+
+.slide-figure {
+    height: 100%;
+    position: relative;
+    margin: 0;
+}
+
+.slide-caption {
+    position: absolute;
+    bottom: 30%;
+    width: calc(100% - 1rem);
+    font-family: 'Parisienne', cursive;
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+    text-shadow: 0 0 10x black;
+}
+
+.trigger:checked + .slide {
+    z-index: 6000;
+    opacity: 1;
+}
+
+.slider-nav {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+}
+
+.slider-nav__item {
+    display: inline-block;
+}
+
+.slider-nav__label {
+    font-size: 13px;
+    background-color: #333;
+    display: block;
+    height: 2em;
+    line-height: 2em;
+    width: 2em;
+    text-align: center;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    transition: background-color .25s, color .25s ease-in-out;
+}
+
+.slider-nav__label:hover,
+.slider-nav__label:active,
+.slider-nav__label:focus {
+    background-color: #7adda2;
+    color: #7adda2;
+}
+
+
+
+@media only screen and (min-width: 1024px) {
+  .slider, .slider-wrapper {
+    height: 480px;
+  }
+
+  .slide-caption {
+    width: 65%;
+    font-size: 4rem;
+  }
+}
+
+@media only screen and (max-width: 1023px) and (min-width: 768px) {
+  .slider, .slider-wrapper {
+    height: 360px;
+  }
+
+  .slide-caption {
+    width: 75%;
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .slide-img {
+    width: auto;
+    height: 100%;
+  }
+}
+
+/*--------------------------------
+
+Formulaire de contact et liens réseaux
+
+----------------------------------*/
+
+#contact{
+    display: grid;
+    grid-template-columns: minmax(100px, 500px) auto;
+}
+
+#contact #contact-form{
+   max-width:500px;
+}
+
+form {
+    max-width: 500px;
+    /* Encadré pour voir les limites du formulaire */
+    padding: 1em;
+    font-size: 1rem;
+    font-weight: 100;
+}
+
+
+form div + div {
+    margin-top: 1em;
+}
+
+form label {
+    /* Pour être sûrs que toutes les étiquettes ont même taille et sont correctement alignées */
+    display: inline-block;
+    width: 90px;
+    text-align: right;
+}
+
+form input, textarea {
+    /* Pour s'assurer que tous les champs texte ont la même police.
+     Par défaut, les textarea ont une police monospace */
+    font: 1em sans-serif;
+
+    /* Pour que tous les champs texte aient la même dimension */
+    width: 300px;
+    box-sizing: border-box;
+
+    /* Pour harmoniser le look & feel des bordures des champs texte */
+    border: 1px solid #999;
+}
+
+form input:focus, textarea:focus {
+    /* Pour souligner légèrement les éléments actifs */
+    border-color: #000;
+}
+
+form textarea {
+    /* Pour aligner les champs texte multi‑ligne avec leur étiquette */
+    vertical-align: top;
+
+    /* Pour donner assez de place pour écrire du texte */
+    height: 5em;
+}
+
+form .button {
+    /* Pour placer le bouton à la même position que les champs texte */
+    padding-left: 90px; /* même taille que les étiquettes */
+}
+
+form button {
+    /* Cette marge supplémentaire représente grosso modo le même espace que celui
+     entre les étiquettes et les champs texte */
+    margin-left: .5em;
+    background: white;
+    font-family: 'Montserrat', sans-serif;
+    border: none;
+}
+
+form button:hover {
+    background: #7adda2;
+}
+
+#social {
+    max-width:300px;
+    font-size: 2em;
+}
+
+#social a {
+    color:white;
+}
+
+#social a:hover {
+    color: #7adda2;
+}
+
+/*----------------------------------
+
+Elements graphiques
+
+-------------------------------------*/
+
+
+
+
+#rocket{
+    position: fixed;
+    z-index: 0;
+    right:40%;
+    top:80%;
+    filter: brightness(30%);
+    animation: spaceMouv 10s infinite ease;
+}
+
+@keyframes spaceMouv {
+    0%{top:80%}
+    33%{top:75%; transform: rotate(5deg)}
+    33%{top:70%; transform: rotate(-20deg)}
+    66%{top:65%; transform: rotate(15deg)}
+    100%{top:80%}
+}
+@-moz-keyframes spaceMouv {
+    0%{top:80%}
+    33%{top:75%; transform: rotate(5deg)}
+    33%{top:70%; transform: rotate(-20deg)}
+    66%{top:65%; transform: rotate(15deg)}
+    100%{top:80%}
+    
+}
+@-webkit-keyframes spaceMouv {
+    0%{top:80%}
+    33%{top:75%; transform: rotate(5deg)}
+    33%{top:70%; transform: rotate(-20deg)}
+    66%{top:65%; transform: rotate(15deg)}
+    100%{top:80%}    
+}
+@-o-keyframes spaceMouv {
+    0%{top:80%}
+    33%{top:75%; transform: rotate(5deg)}
+    33%{top:70%; transform: rotate(-20deg)}
+    66%{top:65%; transform: rotate(15deg)}
+    100%{top:80%}
+}
+
+
+
+
+
+
+.graphElem {
+    filter:brightness(20%); 
+    position: relative;
+    right:50px; 
+    bottom:100px;
+    width: 300px;
+    float: right;
+    animation: cintille 10s infinite ease;
+}
+
+#comete {
+    top:20%;
+    float: right;
+}
+
+@keyframes cintille {
+    0% {filter:brightness(20%); }
+    50% {filter:brightness(10%); }
+    100% {filter:brightness(20%); }
+}
+@-moz-keyframes cintille {
+    0% {filter:brightness(20%); }
+    50% {filter:brightness(10%); }
+    100% {filter:brightness(20%); }
+}
+@-webkit-keyframes cintille {
+    0% {filter:brightness(20%); }
+    50% {filter:brightness(10%); }
+    100% {filter:brightness(20%); }
+}
+@-o-keyframes cintille {
+    0% {filter:brightness(20%); }
+    50% {filter:brightness(10%); }
+    100% {filter:brightness(20%); }
+}
+
+
+
+
+/*----------------------------------
+
+Footer et signature
+
+------------------------------------*/
+
+
+footer p{
+    margin-left: 10%;
+    padding-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 300;
+    color: white;
+}
+
+footer a{
+    font-weight: 700;
+    color: #7adda2;
+}
+
+
+/*--------------------
+Blocs de contenus particuliers
+---------------------*/
+
+
+
+
+/*---------------------
+
+Clases Animations CSS
+
+-----------------------*/
+
+
+.fadeIn{
+    animation: fadein 3s;
+    -moz-animation: fadein 3s; /* Firefox */
+    -webkit-animation: fadein 3s; /* Safari et Chrome */
+    -o-animation: fadein 3s; /* Opera */
+}
+
+
+@keyframes fadein {
+    0% {
+        opacity:0;
+    }
+    50% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* sur Firefox */
+     0% {
+        opacity:0;
+    }
+    50% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* sur Safari et Chrome */
+     0% {
+        opacity:0;
+    }
+    50% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* sur Opera */
+      0% {
+        opacity:0;
+    }
+    50% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
