@@ -7,60 +7,47 @@ body {
     font-family: 'Montserrat';
     background-color: #f9f2f0;
     background-image: url(backgroundLeaves.png);
-    background-position: 100% 0%;
+    background-position: 0 100%;
     background-attachment:fixed;
     background-repeat: repeat-x;
     background-size: auto 220px;
-    animation: introBackground 5s, animatedBackground 30s ease 5s;
+    animation: animatedBackground 30s ease 3s infinite;
 }
-
-@keyframes introBackground {
-	0% { background-position: 0 calc(100% + 0px); }
-	90% { background-position: 100% calc(100% + 0px); }
-	100% { background-position: 100% 0; }
-}
-
-@-moz-keyframes introBackground {
-    0% { background-position: 0 calc(100% + 0px); }
-	90% { background-position: 100% calc(100% + 0px); }
-	100% { background-position: 100% 0; }
-}
-
-
-@-webkit-keyframes introBackground {
-    0% { background-position: 0 calc(100% + 0px); }
-	90% { background-position: 100% calc(100% + 0px); }
-	100% { background-position: 100% 0; }
-}
-
 
 @keyframes animatedBackground {
-	0% { background-position: 100% 0;  }
-	50% { background-position: 0 0; }
-	100% { background-position: 100% 0; }
+	0% { background-position: 0 100%;  }
+	50% { background-position: 100% 100%; }
+	100% { background-position: 0 100%; }
 }
 
 @-moz-keyframes animatedBackground {
-	0% { background-position: 100% 0;  }
-	50% { background-position: 0 0; }
-	100% { background-position: 100% 0; }
+	0% { background-position: 0 100%;  }
+	50% { background-position: 100% 100%; }
+	100% { background-position: 0 100%; }
 }
 
 
 @-webkit-keyframes animatedBackground {
-	0% { background-position: 100% 0;  }
-	50% { background-position: 0 0; }
-	100% { background-position: 100% 0; }
+	0% { background-position: 0 100%;  }
+	50% { background-position: 100% 100%; }
+	100% { background-position: 0 100%; }
 }
-
-
-
 
 .heading-primary {
     font-size: 2em;
-    margin: 50px 0 100px;
+    margin: 0 0 50px ;
     text-align: center;
+    border-bottom: 7px solid transparent;
+    -webkit-border-image: url(accordion-ban.png) 1 ; /* Safari 3.1-5 */
+    -o-border-image: url(accordion-ban.png) 1; /* Opera 11-12.1 */
+    border-image: url(accordion-ban.png) 1;
+    background-image: url(topBackgroundLeaves.png);
+    background-repeat: no-repeat;
+    background-size: auto 120px;
+    background-position: 0% 121% ;
 }
+
+
 
 
 .heading-intro {
@@ -129,8 +116,8 @@ body {
 
 
 .heading-intro-content h1 {
-    padding-bottom: 20px;
-    font-size: 3em;
+    padding-bottom: 25px;
+    font-size: 4em;
     font-weight: 300;
     color: #000000;
     font-family: 'Parisienne', cursive; 
@@ -319,7 +306,7 @@ body {
 
 .mask.heading-intro-content h1 {
   position: relative;
-  padding-bottom: 20px;
+  padding-bottom: 25px;
   /* overwrite default style */
   opacity: 1;
   /* <h1> text is not visible - it is used only as a container for the ::after element */
@@ -363,7 +350,7 @@ body {
 }
 @media only screen and (min-width: 768px) {
   .mask.heading-intro-content h1 {
-    padding-bottom: 20px;
+    padding-bottom: 25px;
   }
   .mask.heading-intro-content h1 span::before {
     top: calc(100% + 18px);
@@ -413,7 +400,11 @@ body {
   }
 }
 
+/**------------------------
 
+Accordéon
+
+--------------------------**/
 
 .accordion dl,
 .accordion-list {
@@ -456,9 +447,9 @@ body {
     background-color: #05af43;
     text-align: center;
     font-weight: 300;
-    font-size:2em;
-    padding: 0.75em;
-    padding-bottom: 0.5em;
+    font-size:2.5em;
+    padding: 12%;
+    padding-bottom: calc(12% - 7px);
     display: block;
     text-decoration: none;
     color: #fff;
@@ -469,6 +460,12 @@ body {
     transition: background-color 0.2s ease-in-out;
 }
 
+@media only screen and (min-width: 768px) and (orientation: landscape) {
+       .accordionTitle,
+    .accordion__Heading { padding: 0.7em;
+    padding-bottom: calc(0.7em - 7px);
+    }
+}
 
 .accordionTitle:before,
 .accordion__Heading:before {
