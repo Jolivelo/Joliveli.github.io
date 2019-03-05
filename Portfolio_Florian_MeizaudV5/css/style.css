@@ -10,26 +10,26 @@ body {
     background-position: 100% 0%;
     background-attachment:fixed;
     background-repeat: repeat-x;
-    background-size: auto 350px;
+    background-size: auto 220px;
     animation: introBackground 5s, animatedBackground 30s ease 5s;
 }
 
 @keyframes introBackground {
-	0% { background-position: 0 calc(100% + 130px); }
-	90% { background-position: 100% calc(100% + 130px); }
+	0% { background-position: 0 calc(100% + 0px); }
+	90% { background-position: 100% calc(100% + 0px); }
 	100% { background-position: 100% 0; }
 }
 
 @-moz-keyframes introBackground {
-    0% { background-position: 0 calc(100% + 130px); }
-	90% { background-position: 100% calc(100% + 130px); }
+    0% { background-position: 0 calc(100% + 0px); }
+	90% { background-position: 100% calc(100% + 0px); }
 	100% { background-position: 100% 0; }
 }
 
 
 @-webkit-keyframes introBackground {
-    0% { background-position: 0 calc(100% + 130px); }
-	90% { background-position: 100% calc(100% + 130px); }
+    0% { background-position: 0 calc(100% + 0px); }
+	90% { background-position: 100% calc(100% + 0px); }
 	100% { background-position: 100% 0; }
 }
 
@@ -165,8 +165,8 @@ body {
     z-index: 0;
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
-    font-size: 0.75em;
-    line-height: 1.5rem;
+    font-size: 1em;
+    line-height: 1em;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
     opacity: 0;
@@ -596,7 +596,7 @@ body {
 .item-content h5{
     padding: 1em 0 1em;
     font-family: "Parisienne", cursive;
-    font-size:2.2em;
+    font-size:3em;
     text-shadow: 0 0 1px #f9f2f0;
     text-align: center;
     quotes: "«" "»";
@@ -615,6 +615,10 @@ body {
     color:  #9f6950;
 }
 
+.item-content p{
+    font-size: 1.75em;
+}
+
 .item-content ul{
     margin:0 3em;
     list-style: none;
@@ -625,6 +629,7 @@ body {
     margin: 1em;
     width:13em;
     display: inline-block;
+    font-size: 1.5em;
     vertical-align: top;
     border-left: 3px solid #9f6950;
     border-bottom-right-radius: 8px;
@@ -639,11 +644,11 @@ body {
 }
 
 .item-content .pict{
-    width: 27em;
+    width: 30em;
     margin: 0 auto;
     padding 2em;
     display: grid;
-    grid-template-columns: 12em 15em;
+    grid-template-columns: 12em 18em;
     background-color: #f0a794;
 }
 
@@ -661,6 +666,7 @@ body {
 
 .item-content .pict span{
     padding:1em 1em 0 0;
+    font-size: 1.25em;
     color: #fff;   
 }
 
