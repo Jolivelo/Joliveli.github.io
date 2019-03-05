@@ -705,7 +705,7 @@ Style Slider Css
     margin-top:1em;
     font-style: italic;
     font-size: 1.7em;
-    font-weight:100;
+    font-weight:300;
     color: #ffffff;
 }
 
@@ -847,3 +847,23 @@ Style Slider Css
 #social a:hover{
     color: #f0a794;
 }
+
+footer{
+    max-width: 960px;
+    margin: 20px auto;
+    font-size: 0.7em;
+    color: #e6cbc4;
+    line-height: 0;
+    text-align: center;
+}
+footer:hover a{
+        color: #f0a794;
+}
+
+footer a{
+        color: inherit;
+}
+footer a:hover{
+        text-decoration: none;
+}
+
