@@ -471,7 +471,7 @@ Accordéon
 .title-content{
     margin-left: calc(90px - 0.5em);
     padding: 0.2em;
-    background-color: #f9f9f0;
+    background-color: #f9f2f0;
 }
 
 
@@ -481,6 +481,13 @@ Accordéon
 .accordionTitle.is-expanded {
     background-size: 100%;
 }
+
+.accordionTitleActive .title-content,
+.accordionTitle.is-expanded .title-content{
+	   background-color: inherit;
+}
+
+
 .accordionTitleActive:before,
 .accordionTitle.is-expanded:before {
   -webkit-transform: rotate(-225deg);
