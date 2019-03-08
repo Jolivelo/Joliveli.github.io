@@ -1,5 +1,9 @@
-//uses classList, setAttribute, and querySelectorAll
-//if you want this to work in IE8/9 youll need to polyfill these
+// -------------------------
+// Animation de l'accordéon
+// Non adapté a IE8/9
+// ------------------------
+
+
 (function(){
 	var d = document,
 	accordionToggles = d.querySelectorAll('.js-accordionTrigger'),
@@ -67,19 +71,26 @@ switchAccordion = function(e) {
   }
 })();
 
+
+
+// ----------  SLIDER
+
 $('#lightSlider').lightSlider({
     gallery: true,
     item: 1,
     loop:true,
-    slideMargin: 3,
-    thumbItem: 3,
+    slideMargin: 0,
+    thumbItem: 4,
 
 });
+
+// ----------- Rechargement de page sur clic du header
 
 $('.heading-primary').click(function() {
     location.reload();
 });
 
+// ----------- Animation texte header sur passage de curseur
 
 var dance = {
   

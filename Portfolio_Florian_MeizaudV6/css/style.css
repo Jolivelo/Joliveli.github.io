@@ -3,6 +3,8 @@
     box-sizing: border-box;
 }
 
+
+
 body {
     font-family: 'Montserrat';
     background-color: #f9f2f0;
@@ -405,13 +407,12 @@ Accordéon
 
 .accordion dl,
 .accordion-list {
+    border: 0.5em solid #ffffff;
 }
-
-
 
 .accordion dd,
 .accordion__panel {
-  background-color: #ffffff;
+  background-color: transparent;
   font-size: 1em;
   line-height: 1.5em;
 }
@@ -422,7 +423,7 @@ Accordéon
 
 .accordion {
     position: relative;
-    background-color: #ffffff;
+    background-color: transparent;
     animation: fadeIntro 4s;
 }
 
@@ -447,7 +448,7 @@ Accordéon
     text-decoration: none;
     color: #000;    
 
-    transition: background-size 0.2s ease-in-out;
+    transition: background-size 0.2s ease-in-out, box-shadow 0.1s ease-in;
 }
 
 
@@ -466,27 +467,36 @@ Accordéon
 .accordionTitle:hover,
 .accordion__Heading:hover {
     background-size: 100% 100%;
+    box-shadow: 0 0 5px #222;
 }
 
 .title-content{
     margin-left: calc(90px - 0.5em);
     padding: 0.2em;
     background-color: #f9f2f0;
+    border-top-right-radius: 1em;
+    border-bottom-right-radius: 1em;
+    transition: all 0.3s;
 }
 
-
+.accordionTitle:hover .title-content,
+.accordion__Heading:hover .title-content{
+        border-radius: 1em;
+}
 
 
 .accordionTitleActive,
 .accordionTitle.is-expanded {
-    background-size: 100%;
+    background-size: 100%;    
+    box-shadow: 0 0 5px #222;
+
 }
 
 .accordionTitleActive .title-content,
 .accordionTitle.is-expanded .title-content{
-	   background-color: inherit;
+    background-color: transparent;
+    color: white;
 }
-
 
 .accordionTitleActive:before,
 .accordionTitle.is-expanded:before {
@@ -495,10 +505,11 @@ Accordéon
 }
 
 .accordionItem {
-  height: auto;
-  overflow: hidden;
-  max-height: 150em;
-  transition: max-height 1s;
+    height: auto;
+    overflow: hidden;
+    max-height: 150em;
+    transition: max-height 1s;
+    background-color: #ffffff;
 }
 @media screen and (min-width: 48em) {
   .accordionItem {
@@ -579,8 +590,25 @@ Accordéon
   }
 }
 
+@media only screen and (orientation: landscape) {
+    .accordion dd,
+    .accordion__panel {
+      font-size: 0.8em;
+    }
+    .accordionTitle,
+    .accordion__Heading {
+        font-size: 2em;
+    }
+    .accordionTitle:before,
+    .accordion__Heading:before {
+        padding-left:0.2em;
+    }
+}
+
+/* Base des éléments internes de l'accordéon*/
 .item-content{
     padding:2em;
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 .item-content h5{
@@ -595,14 +623,12 @@ Accordéon
 .item-content h5:before{
     content: open-quote;
     font-size: 2em;
-    color:  #9f6950;
 }
 
 .item-content h5::after{
     content: close-quote;
     font-size: 2em;
     padding-left: 5px;
-    color:  #9f6950;
 }
 
 .item-content p{
@@ -621,7 +647,7 @@ Accordéon
     display: inline-block;
     font-size: 1.5em;
     vertical-align: top;
-    border-left: 3px solid #9f6950;
+    border-left: 3px solid;
     border-bottom-right-radius: 8px;
     border-top-right-radius: 8px;
 }
@@ -639,38 +665,23 @@ Accordéon
     padding 2em;
     display: grid;
     grid-template-columns: 12em 18em;
-    background-color: #f0a794;
 }
 
-.item-content .pict img{
-    height: 15em;    
-    padding:1em;
-    transition: transform 0.2s;
-}
-
-.item-content .pict img:hover{
-    transform: scale(1.8) translate(-2.2em , -3em);
-    padding:0;
-    box-shadow: 0 0 10px #f9f2f0; 
-}
 
 .item-content .pict span{
-    padding:1em 1em 0 0;
     font-size: 1.25em;
     color: #fff;   
 }
 
 
-/**-------------------------------
 
-Style Slider Css
-
-------------------------------**/
+/*slider photo*/
 
 #slider {
     max-height:700px;
-    margin: 3em auto;
-    padding: 1em;
+    margin: auto;
+    padding: 3em 1em;
+    background-color: #ffffff;
 }
 
 #lightSlider ul {
@@ -740,59 +751,37 @@ Style Slider Css
 }
 
 
-#lienPM img{
-    height:auto;
-    margin:auto; 
-    filter: saturate(70%);
-    transition: filter 0.2s;
-}
 
-#lienPM img:hover{
-    transform:none;
-    padding:1em;
-    box-shadow: none;
-}
-
-#lienPM{
-    text-decoration: none;
-}
-
-#lienPM:hover{
-    text-decoration: underline;
-    text-decoration-color: #ffffff;
-}
-
-#lienPM:hover img{
-    filter: saturate(100%);
-}
-
+/*bloc contact et liens sociaux*/
 
 #contact{
-    margin: 20px auto;
+    margin: 45px auto;
     padding: 16px;
-    max-width: 30em;
+    max-width: 50em;
     display: grid;
-    grid-template-columns: auto 10em;
+    grid-template-columns: auto 15em;
     background: #f9f2f0;
 }
 
+/* formulaire */
 .contact-form{
-	max-width: 400px;
+	max-width: 30em;
+    max-height: 40em;
 	padding: 16px;
+    margin: 0 auto;
 	background: #f9f2f0;
 }
+
 .contact-form h1{
 	padding: 20px 0;
 	font-size: 2em;
 	font-weight: 300;
 	text-align: center;
-	color: #9f6950;
+	color: #006f43;
 	margin: -16px -16px 16px -16px;
-    border-bottom: 3px solid #05af43;
-    -webkit-border-image: url(accordion-ban.png) 1 ; /* Safari 3.1-5 */
-    -o-border-image: url(accordion-ban.png) 1; /* Opera 11-12.1 */
-    border-image: url(accordion-ban.png) 1;
+    border-bottom: 3px solid #006f43;;
 }
+
 .contact-form input[type="text"],
 .contact-form input[type="date"],
 .contact-form input[type="datetime"],
@@ -813,9 +802,10 @@ Style Slider Css
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	width: 100%;
+	max-width: 100%;
 	background: #fff;
 	margin-bottom: 4%;
-	border: 1px solid #ccc;
+	border: 1px solid #ddd;
 	padding: 3%;
 	color: #555;
 }
@@ -830,9 +820,9 @@ Style Slider Css
 .contact-form textarea:focus,
 .contact-form select:focus
 {
-	box-shadow: 0 0 5px #43D1AF;
+	box-shadow: 0 0 5px #05af43;
 	padding: 3%;
-	border: 1px solid #43D1AF;
+	border: 1px solid #006f43;
 }
 
 .contact-form input[type="submit"],
@@ -842,33 +832,134 @@ Style Slider Css
 	-moz-box-sizing: border-box;
 	width: 100%;
 	padding: 3%;
-	background: #05af43;
-	border-bottom: 2px solid #30C29E;
+	background: #006f43;
 	border-top-style: none;
 	border-right-style: none;
 	border-left-style: none;	
+	border-bottom-style: none;	
 	color: #fff;
+    transition: all 0.2s;
 }
 .contact-form input[type="submit"]:hover,
 .contact-form input[type="button"]:hover{
-	background: #006f43;
+	background: #05af43;
+    border-radius: 1em;
 }
 
+/*Logos/liens vers les réseaux sociaux*/
 #social {
-    padding: 1em 3rem;
+    margin: 1em auto;
+    padding:0.5em;
     display: block;
     font-size: 5em;
-    color: white;
+    border-left: 3px solid #006f43;
 }
 
 #social a{
-    color: #05af43;
+    color: #006f43;
     text-decoration: none;
+    transition: all 0.2s;
 }
 
 #social a:hover{
-    color: #f0a794;
+    color: #05af43;
 }
+
+
+/*Style spécifique aux rubriques*/
+
+#accordion1 .item-content h5:before{
+    color: #8c3a19;
+}
+#accordion1 .item-content h5:after{
+    color: #8c3a19;
+}
+
+#accordion1 .item-content li{
+    border-left-color: #9f6950;
+}
+#accordion1 .item-content li::first-letter{
+    color:  #8c3a19;
+}
+
+#accordion2 .item-content h5:before{
+    color: #9f6950;
+}
+#accordion2 .item-content h5:after{
+    color: #9f6950;
+}
+
+#accordion2 .item-content li{
+    border-left-color: #9f6950;
+}
+#accordion2 .item-content li::first-letter{
+    color:  #9f6950;
+}
+
+#accordion3 .item-content h5:before{
+    color:  #f0a794;
+}
+#accordion3 .item-content h5:after{
+    color:  #f0a794;
+}
+
+#accordion3 .item-content .pict{
+    background-color: #f0a794;
+}
+
+#accordion3 .item-content .pict img{
+    height: 15em;    
+    padding:1em;
+    transition: transform 0.2s;
+}
+
+#accordion3 .item-content .pict img:hover{
+    transform: scale(1.8) translate(-2.2em , -3em);
+    padding:0;
+    box-shadow: 0 0 10px #f9f2f0; 
+}
+
+#accordion3 .item-content .pict span{
+    padding:1em 1em 0 0;  
+}
+
+#accordion5 .item-content h5:before{
+    color:  #05af43;
+}
+#accordion5 .item-content h5:after{
+    color:  #05af43;
+}
+
+#accordion5 .pict{
+    text-decoration: none;
+}
+
+#accordion5 .item-content .pict{
+    background-color: #05af43;
+    width: 50em;
+    grid-template-columns: auto auto;
+}
+
+#accordion5 .pict img{
+    height:auto;
+    margin:1em;
+}
+
+#accordion5 .pict span{
+    margin:1em;
+    padding-right: 1em;
+    text-align: right;
+    border-right: 3px solid #ffffff;
+}
+
+
+
+
+/*---------------------------
+
+Footer
+
+-------------------------*/
 
 footer{
     max-width: 960px;
