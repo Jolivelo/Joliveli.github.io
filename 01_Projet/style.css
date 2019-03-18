@@ -1,0 +1,650 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto+Slab|Roboto:100,400,700');
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin:0;
+    background-color: #f9f2f0;
+    min-height:4000px;
+}
+
+
+.container{
+    max-width:480px; /* Modifier pour affichage responsive */
+    margin:0 auto;
+}
+
+
+.container h5{
+    position: absolute;
+    top:-37px;
+    z-index: 10;
+    margin:0;
+    font-family: "Roboto Slab", serif;
+    font-size:35px;
+    color: #ffffff;
+}
+
+
+@media screen and (min-width:970px) and (orientation: landscape){
+    .container{
+        max-width:960px;
+    }
+
+    .row2{
+        display: grid;
+        grid-template-rows: 70% 50%;
+    }
+
+    .col2{
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+}
+
+.content{
+    padding:3em 0;
+    color: #504034;
+}
+
+.content h6{
+    font-family: "Roboto Slab", serif;
+    font-size: 2em;
+    margin: 0;
+    color: #504034;
+}
+
+.content p{
+    margin:0;
+    font-family: "Roboto", sans-serif;
+    font-size: 1em;
+    font-size: 0.9em;
+    font-style: italic;
+    letter-spacing: 0.05rem;
+}
+
+header{
+    margin:0;
+    height:480px;
+    background: url(banFond.png) repeat-x;
+}
+
+@media screen and (min-width:970px){
+    header{
+        background-image: url(fondBanLargeBottom.png);
+        background-position: 100% -200%;
+        background-repeat: no-repeat;
+        height:960px;
+    }
+}
+
+.title{
+    position: relative;
+    top: 200px;
+    color: #ffffff;
+}
+
+@media screen and (min-width:970px) and (orientation: landscape){
+    .title{
+        margin: 0 2em;
+    }
+}
+
+
+.title h4{
+    margin:0;
+    padding: 5px 0;
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-size: 1.5em;
+}
+
+
+.title h1{
+    margin: 0;
+    font-family: "Roboto Slab", serif;
+    font-size: 2.5em;
+    font-weight: 400;
+}
+
+.title h1::before{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #f9f2f0;
+
+}
+
+.title h1::after{
+    content: "";
+    margin: 5px 0;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #f9f2f0;
+}
+
+
+
+
+/*---------------------------------------------
+
+Introduction loop text effet tapé
+
+-----------------------------------------------*/
+
+#intro{
+    position: fixed;
+    top:0;
+    z-index: -1;
+    padding:240px 0;
+    width: 480px;
+    font-family: "Roboto", sans-serif;
+    font-size: 2.5em;
+    font-weight: 100;
+    color: #e6cfc8; 
+    display: inline;   
+    text-align: center;
+}
+
+/* Classe de masquage après scroll */
+.visible{
+    visibility: visible;
+}
+.invisible{
+    visibility: hidden;
+}
+
+#intro_text{
+    display: inline;   
+}
+
+/* Animation du curseur*/
+.typed-cursor {
+    opacity: 1;
+    font-weight: 100;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    -ms-animation: blink 0.7s infinite;
+    -o-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+ @-keyframes blink {
+     0% {
+         opacity:1;
+     }
+     50% {
+         opacity:0;
+     }
+     100% {
+         opacity:1;
+     }
+}
+ @-webkit-keyframes blink {
+     0% {
+         opacity:1;
+     }
+     50% {
+         opacity:0;
+     }
+     100% {
+         opacity:1;
+     }
+}
+ @-moz-keyframes blink {
+     0% {
+         opacity:1;
+     }
+     50% {
+         opacity:0;
+     }
+    100% {
+        opacity:1;
+     }
+}
+ @-ms-keyframes blink {
+     0% {
+         opacity:1;
+}
+     50% {
+         opacity:0;
+}
+     100% {
+         opacity:1;
+}
+}
+ @-o-keyframes blink {  
+     0% {
+         opacity:1;
+}
+     50% {
+         opacity:0;
+     }
+     100% {
+         opacity:1;
+     }
+}
+
+.typed-fade-out {
+  opacity: 0;
+  animation: 0;
+  transition: opacity .25s;
+}
+
+
+
+#portfolio{
+    position: relative;
+    top: 850px;
+    z-index: 1;
+    min-height: 600px;
+    margin:0;
+    background: #fff;
+    box-shadow: 0 0 100px #222;
+}
+
+@media screen and (min-width:970px) and (orientation: landscape){
+    #portfolio{
+        top:500px;
+    }
+}
+
+
+#portfolio::before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: -600px;
+    height: 600px;
+    width: 100%;
+    background: url(fondBanLargeTop.png);
+    background-position: 0 180px ; /* Changer background position pour responsive + large*/
+    background-repeat: repeat-x;
+}
+
+#about{
+    margin: 3em 3em 3em 0;
+}
+
+#about ul{
+    list-style: none;
+    font-family: "Roboto", sans-serif;
+    font-size: 1em;
+    font-size: 0.9em;
+    font-style: italic;
+    letter-spacing: 0.05rem;
+}
+
+#about li:before{
+    content: "/";
+    padding: 0 1em;
+}
+
+/*----------------------------------
+
+Slider des projets WEB
+
+-------------------------------*/
+#slider{
+    width:450px;
+    margin: 2em 0;
+}
+
+.lSSlideWrapper{
+    height:450px;
+    border-radius: 10px;
+}
+
+.lSAction > a{
+    opacity: 1;
+}
+
+.lSAction > a{
+    top:16px;
+    height:146px;
+    width:146px;
+    color: #8e7562;
+    background: rgba( 255, 255, 255, 0.9);
+    transition: all 0.2s;
+}
+
+.lSAction > a:hover{
+    background: rgba( 255, 255, 255, 0.7);
+}
+
+.lSAction > .lSPrev{
+    left:0;
+}
+
+.lSAction > .lSPrev:before {
+    position: absolute;
+    top:-15px;
+    left:30px;
+    content: "<";
+    font-size: 10em;
+}
+
+.lSAction > .lSNext{
+    right:0;
+}
+
+.lSAction > .lSNext:before {
+    position: absolute;
+    top:-15px;
+    right: 30px;
+    content: ">";
+    font-size:10em;   
+
+}
+
+#slider ul {
+    list-style: none outside none;
+    padding-left: 0;
+    margin-bottom:0;
+    overflow: visible;
+}
+#slider li {
+    display: block;
+    float: left;
+    margin-right: 6px;
+    cursor:pointer;
+    position: relative;
+    max-width: 200%;    
+}
+#slider img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+    z-index: 1000;
+}
+
+.projDescript{
+    position: absolute;    
+    visibility: hidden;
+    opacity:0;
+    top:0;
+    left:0;
+    z-index: -1;
+    height:450px;
+    width:100%;
+    display: grid;
+    grid-template-rows: 152px 298px;
+    transition: all 0.5s;
+}
+
+.active .projDescript{
+    visibility: visible;
+    opacity:1;
+}
+
+.proj-info{
+    width:450px;
+    padding:20px;
+    position: relative;
+    left:-152px;
+    font-family: "Roboto", sans-serif;
+}
+
+.proj-info h6{
+    margin:0;
+    font-family: "Roboto Slab", serif;
+    font-size: 20px;
+}
+
+.proj-info h6:after{
+    content: "";
+    margin: 5px 0;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.proj-content{
+    height:100%;
+    display: grid;
+    grid-template-rows: 30% auto 30%; 
+}
+
+.proj-content p{
+    font-style: normal;
+}
+
+
+.proj-resum{
+    font-style: italic;
+    font-size: 15px;
+}
+
+.proj-detail{
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+
+.proj-work{
+    position: relative;
+    z-index: 1;
+    padding-left: 10px;
+}
+
+.proj-work:before{
+    content: "Réalisation";
+    position: absolute;
+    top: -30px;
+    left:-10px;
+    z-index: -1;
+    color:rgba(255, 255, 255, 0.3);
+    font-family: "Roboto", sans-serif;
+    font-size: 40px;
+    font-weight: 100;
+    font-style: italic;
+}
+.proj-techno{
+    position: relative;
+    z-index: 1;
+    padding-right: 10px;
+}
+.proj-techno:before{
+    content: "Techno";
+    position: absolute;
+    top: -30px;
+    right:10px;
+    z-index: -1;
+    color:rgba(255, 255, 255, 0.3);
+    font-family: "Roboto", sans-serif;
+    font-size: 40px;
+    font-weight: 100;
+    font-style: italic;
+}
+
+.proj-techno{
+    text-align: right;
+}
+
+.proj-link{
+    margin:0;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0);
+    border-top: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.proj-link a{
+    margin: 10px auto;
+    position: absolute;
+    bottom:0;
+    left:0;
+    z-index: 10;
+    width:100%;
+    color: #504034;
+    font-size: 30px;
+    font-weight: 100;
+    letter-spacing: 0.1em;
+    text-shadow: 0 0 10px white;
+    text-decoration: none;
+    transition: all 0.4s;
+}
+
+.proj-link a span{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.proj-link a:hover{
+    transform: scale(1.5);
+}
+
+.proj-link a span::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    display: block;
+    width: 100%;
+    height: 0;
+    background-color: rgba(255, 255, 255, 0.8);  
+    z-index: -1;
+    -webkit-transition: all 0.4s ease;
+    transition: all .4s ease;
+}
+
+.proj-content a:hover span::after{
+    height:350px;
+}
+
+#photo{
+    margin: 3em 0;
+}
+
+
+/*-------------------------------
+
+Bloc Compétences
+
+------------------------------*/
+
+#skills{
+    position: relative;
+    top: 1200px;
+    z-index: 0;
+    min-height: 800px;
+    margin:0;
+    background: #fff;
+    box-shadow: 0 0 100px #222;
+}
+
+@media screen and (min-width:970px) and (orientation: landscape){
+    #skills{
+        top:850px;
+    }
+}
+
+
+#skills::before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: -350px;
+    height: 350px;
+    width: 100%;
+    background: url(banFond.png);
+    background-position: 15% 0 ;
+    background-repeat: repeat;
+}
+
+
+
+/*-------------------------------
+
+Bloc Contact
+
+------------------------------*/
+#contact {
+    position: relative;
+    top:1400px;
+}
+
+@media screen and (min-width:970px) and (orientation: landscape){
+    #contact{
+        top:1050px;
+    }
+}
+
+
+#contact::before{
+    content: "";
+    display: block;
+    position: absolute;
+    top:-330px;
+    z-index: -10;
+    height: 1000px;
+    width: 100%;
+    background: url(fondBanLargeBottom.png);
+    background-repeat: no-repeat;
+    background-position: -500px 0;
+}
+
+#contact .container{
+    height:250px;
+    max-width: 480px;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius:5px;
+}
+
+#contact .container h5{
+    font-size: 30px;
+    top:-31px;
+}
+
+#contact .content{
+    margin: 0 50px;
+    padding: 0;
+    font-family: "Roboto Mono", monospace;
+    font-size: 25px;
+}
+
+#contact a{
+    display: inline-block;
+    margin: 20px;
+    text-decoration: none;
+    color: #504034;
+}
+
+#contact span::after{
+    content: '';
+    position: relative;
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: #8e7562;    
+    z-index: 110;
+    -webkit-transition: all 0.4s ease;
+    transition: all .4s ease;
+}
+
+#contact a:hover span::after{
+    width:100%;
+}
+
+footer{
+    position: relative;
+    top:1800px;
+    margin:1em;
+    text-align: center;
+    font-family: "Roboto Slab", serif;
+    color: #504034;
+}
+
+footer a{
+    color: #504034;
+    text-decoration: none;
+}
+
+footer a:hover{
+    text-decoration: underline;
+}
+
